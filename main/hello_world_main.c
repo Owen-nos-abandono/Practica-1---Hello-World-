@@ -28,12 +28,12 @@ printf("Hello world!\n");
     
     // --- Imprimir información general del chip ---
     printf("This is %s chip with %d CPU core(s), %s%s%s%s, ",
-    CONFIG_IDF_TARGET,                          // Nombre del objetivo compilado (ej. "esp32")
-    chip_info.cores,                            // Número de núcleos de CPU
-    (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",      // Soporte WiFi
-    (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",               // Soporte Bluetooth Classic
-    (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",             // Soporte Bluetooth Low Energy
-    (chip_info.features & CHIP_FEATURE_IEEE802154)                    // Soporte Zigbee/Thread
+    CONFIG_IDF_TARGET,                          
+    chip_info.cores,                            
+    (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",   
+    (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",              
+    (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",             
+    (chip_info.features & CHIP_FEATURE_IEEE802154)                   
     ? ", 802.15.4 (Zigbee/Thread)" : "");
     
     // --- Calcular versión del silicio ---
