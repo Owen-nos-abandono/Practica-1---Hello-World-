@@ -38,20 +38,20 @@ printf("Hello world!\n");
     
     // --- Calcular versión del silicio ---
     // El campo 'revision' combina versión mayor y menor en un solo entero (ej. 101 = v1.1)
-    unsigned major_rev = chip_info.revision / 100;   // Parte entera (vX)
-    unsigned minor_rev = chip_info.revision % 100;   // Resto (vY)
+    unsigned major_rev = chip_info.revision / 100;   
+    unsigned minor_rev = chip_info.revision % 100;   
     printf("silicon revision v%d.%d, ", major_rev, minor_rev);
     
     // --- Obtener tamaño de la memoria flash ---
     // 'esp_flash_get_size' devuelve ESP_OK si la lectura fue correcta.
     if (esp_flash_get_size(NULL, &flash_size) != ESP_OK) {
-    printf("Get flash size failed\n");  // Error si no se puede determinar el tamaño
-    return;                             // Finaliza la tarea app_main()
+    printf("Get flash size failed\n");  
+    return;                             
     }
     
     // --- Imprimir tamaño y tipo de flash ---
     printf("%" PRIu32 "MB %s flash\n",
-    flash_size / (uint32_t)(1024 * 1024),       // Conversión de bytes a megabytes
+    flash_size / (uint32_t)(1024 * 1024),       
     (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
     // Indica si la flash es integrada o externa al chip
     
